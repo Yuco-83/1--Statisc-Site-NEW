@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Static - CATEGORIES</title>
+		<link rel="stylesheet" href="./CSS/general.css" />
+		<link rel="stylesheet" href="./CSS/elements_style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@100..900&family=Open+Sans:wght@100..900&display=swap"
+			rel="stylesheet" />
+	</head>
+
+	<body>
+		<!------ Web page structured with Grid CSS. ------>
+		<!-- The page has:
+		    - a header for the LOGO
+		    - a nav for the NAV-MENU
+		    - a main for the MAIN CONTANT
+		    - a footer the EXTRA LINKS -->
+		<header class="header">
+			<h5 class="logo">
+				<a href="index_categ.html">FashionRUs</a>
+			</h5>
+			<nav class="nav">
+				<div class="menu-btn" id="menu-btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="nav-links">
+					<li><a href="index_categ.html">Categories</a></li>
+					<li><a href="index_categories.html">Brands</a></li>
+					<li><a href="index_categories.html">Seasons</a></li>
+				</ul>
+
+				<div class="nav-mobile" id="nav-mobile">
+					<a href="index_categ.html">Categories</a>
+					<a href="index_categories.html">Brands</a>
+					<a href="index_categories.html">Seasons</a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="main">
+			<h3 class="c title">CATEGORIES</h3>
+			<section class="categories-container">
+				<a href="./product_list.html">
+					<button type="button">Accessories</button>
+				</a>
+				<a href="./product_list.html">
+					<button type="button">Apparel</button>
+				</a>
+				<a href="./product_list.html">
+					<button type="button">Footwear</button>
+				</a>
+				<a href="./product_list.html">
+					<button type="button">Free Items</button>
+				</a>
+				<a href="./product_list.html">
+					<button type="button">Personal Care</button>
+				</a>
+				<a href="./product_list.html">
+					<button type="button">Sporting Goods</button>
+				</a>
+			</section>
+		</main>
+		<!-- <footer class="footer">
+			<h1>FOOTER</h1>
+		</footer> -->
+	</body>
+
+	<script>
+		//  -------- MOBILE BURGER MENU ------------
+		const menuBtn = document.getElementById("menu-btn");
+		const navMobile = document.getElementById("nav-mobile");
+
+		// Toggle mobile menu on hamburger click
+		menuBtn.addEventListener("click", () => {
+			menuBtn.classList.toggle("open");
+			navMobile.classList.toggle("open");
+		});
+
+		// Close the mobile menu when the screen gets larger than 768px
+		window.addEventListener("resize", () => {
+			if (window.innerWidth > 768) {
+				// Remove open classes when resizing to a larger screen
+				menuBtn.classList.remove("open");
+				navMobile.classList.remove("open");
+			}
+		});
+	</script>
+</html>

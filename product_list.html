@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Static - PRODUCT LIST</title>
+		<link rel="stylesheet" href="./CSS/general.css" />
+		<link rel="stylesheet" href="./CSS/elements_style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@100..900&family=Open+Sans:wght@100..900&display=swap"
+			rel="stylesheet" />
+	</head>
+
+	<body>
+		<!------ Web page structured with Grid CSS. ------>
+		<!-- The page has:
+		    - a header for the LOGO
+		    - a nav for the NAV-MENU
+		    - a main for the MAIN CONTANT
+		    - a footer the EXTRA LINKS -->
+		<header class="header">
+			<h5 class="logo">
+				<a href="index_categ.html">FashionRUs</a>
+			</h5>
+			<nav class="nav">
+				<div class="menu-btn" id="menu-btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="nav-links">
+					<li><a href="index_categ.html">Categories</a></li>
+					<li><a href="index_categories.html">Brands</a></li>
+					<li><a href="index_categories.html">Seasons</a></li>
+				</ul>
+
+				<div class="nav-mobile" id="nav-mobile">
+					<a href="index_categ.html">Categories</a>
+					<a href="index_categories.html">Brands</a>
+					<a href="index_categories.html">Seasons</a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="main">
+			<!-- <h3 class="title">PRODUCT LIST</h3> -->
+			<h3 class="pl title">NIKE</h3>
+			<section class="product-list-container">
+				<article class="product">
+					<img src="./Assets/1163.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<h6 class="product_name">Sahara Team India Fanwear Round Neck Jersey</h6>
+					<div class="prod-categories">
+						<p class="type">Tshirts</p>
+						<p class="separator">|</p>
+						<p class="brand">Nike</p>
+					</div>
+					<div class="price">
+						<p class="price">1595,-</p>
+						<div class="discount">
+							<p class="discount_price"></p>
+							<p class="discount-percent"></p>
+						</div>
+					</div>
+					<a class="product" href="./single_product.html">Read More</a>
+				</article>
+				<article class="product">
+					<img src="./Assets/1164.webp" alt="Blue T20 Indian Cricket Jersey" />
+					<h6 class="product_name">Blue T20 Indian Cricket Jersey</h6>
+					<div class="prod-categories">
+						<p class="type">Tshirts</p>
+						<p class="separator">|</p>
+						<p class="brand">Nike</p>
+					</div>
+					<div class="price">
+						<p class="price">1595,-</p>
+						<div class="discount">
+							<p class="discount_price">1560,-</p>
+							<p class="discount-percent">-34%</p>
+						</div>
+					</div>
+					<a class="product" href="./product.html">Read More</a>
+				</article>
+				<article class="product soldOut">
+					<div class="sold-out">SOLD OUT</div>
+					<!-- <div class="sold_out">Sold out</div> -->
+					<img src="./Assets/1165.webp" alt="Blue T21 Indian Cricket Jersey" />
+					<h6 class="product_name">Blue T21 Indian Cricket Jersey</h6>
+					<div class="prod-categories">
+						<p class="type">Tshirts</p>
+						<p class="separator">|</p>
+						<p class="brand">Nike</p>
+					</div>
+					<div class="price">
+						<p class="price">1595,-</p>
+						<div class="discount">
+							<p class="discount_price"></p>
+							<p class="discount-percent"></p>
+						</div>
+					</div>
+					<a class="product" href="./product.html">Read More</a>
+				</article>
+				<article class="product soldOut onSale">
+					<div class="sold-out">SOLD OUT</div>
+					<img src="./Assets/1525.webp" alt="Ble T32 Indian Cricket Jersey" />
+					<h6 class="product_name">Ble T20 Indian Cricket Jersey</h6>
+					<div class="prod-categories">
+						<p class="type">Tshirts</p>
+						<p class="separator">|</p>
+						<p class="brand">Nike</p>
+					</div>
+					<div class="price">
+						<p class="price">1595,-</p>
+						<div class="discount">
+							<p class="discount_price">1560,-</p>
+							<p class="discount-percent">-34%</p>
+						</div>
+					</div>
+					<a class="product" href="./product.html">Read More</a>
+				</article>
+			</section>
+		</main>
+		<!-- <footer class="footer">
+			<h1>FOOTER</h1>
+		</footer> -->
+	</body>
+
+	<script>
+		//  -------- MOBILE BURGER MENU ------------
+		const menuBtn = document.getElementById("menu-btn");
+		const navMobile = document.getElementById("nav-mobile");
+
+		// Toggle mobile menu on hamburger click
+		menuBtn.addEventListener("click", () => {
+			menuBtn.classList.toggle("open");
+			navMobile.classList.toggle("open");
+		});
+
+		// Close the mobile menu when the screen gets larger than 768px
+		window.addEventListener("resize", () => {
+			if (window.innerWidth > 768) {
+				// Remove open classes when resizing to a larger screen
+				menuBtn.classList.remove("open");
+				navMobile.classList.remove("open");
+			}
+		});
+	</script>
+</html>

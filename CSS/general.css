@@ -1,0 +1,223 @@
+/* ------- Basic structure for all WEB PAGES made with CSS GRIDS -------- */
+:root {
+	--primary: white;
+	--secondary: black;
+	--accent: #0f6dcb;
+	--accent-light-shade: #4da5f8;
+	--alert: #e33c2b;
+
+	--open: "Open Sans", sans-serif;
+	--oswald: "Oswald", sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+html {
+	/* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+	/* background-color: var(--primary); */
+	font-family: "Open Sans", sans-serif;
+	font-size: small;
+	font-weight: 700;
+	/* text-align: center;
+	justify-content: center; */
+}
+
+body {
+	/* margin-top: 7rem; */
+	background-color: var(--primary);
+	width: 100vw;
+	height: 100vh;
+	/* margin-bottom: 20px; */
+	padding: 0 10%;
+	align-items: center;
+	/* justify-content: center; */
+	overflow-x: hidden;
+
+	display: grid;
+	/* grid-template-columns: repeat(3, 1fr);  --------- This code has the same efect as the line under in row 24*/
+	grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-end];
+	grid-template-rows: 90px auto 100px;
+
+	grid-template-areas:
+		"header header header"
+		"main main main"
+		"footer footer footer";
+}
+header {
+	grid-area: header;
+	background-color: var(--primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100vw;
+	height: 70px;
+	padding: 0 10%;
+	/* background-color: #70acff; */
+	color: var(--secondary);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* border-bottom: 2px solid var(--secondary); */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+nav {
+	grid-area: nav;
+	/* background-color: aqua; */
+	display: flex;
+	/* justify-content: space-between; */
+	/* align-items: center; */
+	column-gap: 2rem;
+}
+
+main {
+	grid-area: main;
+	/* background-color: #ada200; */
+	/* align-items: center; */
+	justify-content: space-around;
+}
+footer {
+	grid-area: footer;
+	/* background-color: #70acff; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Oswald", sans-serif;
+	font-weight: 600;
+	/* font-stretch: extra-condensed; */
+}
+h1 {
+	margin: 0;
+	font-size: 96px;
+}
+h2 {
+	margin: 0;
+	font-size: 80px;
+}
+h3 {
+	margin: 0;
+	font-size: 64px;
+}
+h4 {
+	margin: 0;
+	font-size: 48px;
+}
+h5 {
+	margin: 0;
+	font-size: 32px;
+}
+h6 {
+	margin: 0;
+	font-size: 16px;
+}
+p {
+	margin: 0;
+	font-size: 14px;
+	color: var(--secondary);
+}
+a {
+	color: var(--secondary);
+}
+
+/* -------------- NAV-MENU FOR MOBILE DEVICES -------------- */
+
+/* ----- LOGO STYLING ----- */
+.logo a {
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--secondary);
+	/* transition: 0.4s ease-in-out; */
+	transition: color 0.3s;
+}
+.logo a:hover {
+	color: var(--alert);
+	/* filter: drop-shadow(0 0 2px); */
+}
+
+/* ----- Desktop navigation ----- */
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 30px;
+}
+.nav-links a {
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: var(--secondary);
+	transition: color 0.4s;
+}
+.nav-links a:hover {
+	color: var(--alert);
+	/* backdrop-filter: #000;
+	filter: drop-shadow(0 0 2px); */
+}
+
+/* ----- Mobile menu button ----- */
+.menu-btn {
+	display: none;
+	cursor: pointer;
+	z-index: 1001; /* Ensure it's above the mobile menu */
+}
+.menu-btn span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: var(--secondary);
+	margin: 5px 0;
+	transition: all 0.4s ease;
+}
+
+/* ----- Rotate animation for hamburger ----- */
+.menu-btn.open span:nth-child(1) {
+	transform: rotate(45deg) translate(5.7px, 5.7px);
+	background-color: var(--alert);
+}
+.menu-btn.open span:nth-child(2) {
+	opacity: 0;
+	background-color: var(--alert);
+}
+.menu-btn.open span:nth-child(3) {
+	transform: rotate(-45deg) translate(5.7px, -5.7px);
+	background-color: var(--alert);
+}
+
+/* ----- Full-screen mobile menu ----- */
+.nav-mobile {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.9);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 999; /* Under the header but above the rest of the content */
+}
+.nav-mobile.open {
+	display: flex;
+}
+.nav-mobile a {
+	text-decoration: none;
+	color: white;
+	font-size: 2rem;
+	margin: 20px 0;
+	transition: color 0.3s;
+}
+.nav-mobile a:hover {
+	color: var(--alert);
+	filter: drop-shadow(0 0 2px);
+}

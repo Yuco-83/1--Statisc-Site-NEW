@@ -1,0 +1,256 @@
+/* -------------- CATEGORIES PAGE -------------- */
+.title {
+	margin-bottom: 3rem;
+	text-align: left;
+}
+.categories-container {
+	display: grid;
+	margin: 0 auto;
+	grid-template-rows: 6rem;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-row: auto;
+	gap: 2rem;
+	justify-self: center;
+	grid-auto-rows: 6rem;
+}
+button {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-radius: 0;
+	background-color: var(--primary);
+	outline: 1px solid var(--secondary);
+	font-family: var(--open);
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	color: var(--secondary);
+	cursor: pointer;
+	transition: color 0.3s ease-in-out;
+}
+button:hover {
+	color: var(--primary);
+	background-color: var(--alert);
+	outline: 0;
+}
+
+/* -------------- PRODUCT LIST PAGE -------------- */
+section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 2rem;
+}
+.product,
+.soldOut,
+.onSale {
+	position: relative;
+	background-color: var(--primary);
+	border-radius: none;
+	display: grid;
+	grid-template-rows: subgrid;
+	grid-row: span 5;
+	gap: 1rem;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+article > img {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.sold-out {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	color: var(--primary);
+	background-color: var(--alert);
+	padding: 1rem 1.5rem;
+}
+.soldOut > img {
+	opacity: 0.3;
+}
+
+.prod-categories {
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+}
+.price {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+/* Skal finde en måde at giv den samme størrelse til "Price" font. */
+.discount {
+	font-size: 40px;
+
+	color: var(--alert);
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.discount_price {
+	font-size: 18px;
+	font-weight: 800;
+	color: var(--alert);
+}
+.discount-percent {
+	font-size: 18px;
+	background-color: var(--alert);
+	color: var(--primary);
+	text-shadow: var(--accent);
+	padding: 0 10px 0 10px;
+}
+.separator {
+	margin: 0 10px;
+}
+a.product {
+	font-family: "Oswald", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--secondary);
+	transition: color 0.3s ease-in-out;
+}
+a.product:hover {
+	color: var(--alert);
+	/* background-color: var(--alert);
+	border-color: var(--accent); */
+}
+
+/* -------------- SINGLE PRODUCT PAGE -------------- */
+
+.single-product-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+}
+.product-img,
+.product-info,
+.purchase-box {
+	width: 100%;
+	height: 100%;
+	/* padding: 20px; */
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	align-items: start;
+	justify-content: start;
+
+	/* min-height: 200px; */
+	/* flex-shrink: inherit; */
+}
+.product-info,
+.purchase-box {
+	padding: 80px 40px;
+	outline: 1px solid var(--secondary);
+}
+.purchase-box {
+	background-color: var(--secondary);
+	color: var(--primary);
+	.type,
+	.brand {
+		color: var(--primary);
+	}
+}
+.model-name {
+	margin: 0;
+	padding: 0;
+}
+
+.pi {
+	margin-bottom: 0.5rem;
+}
+dt {
+	font-family: var(--oswald);
+	font-size: 16px;
+	font-weight: 600;
+}
+dd {
+	font-family: var(--open);
+	font-weight: 400;
+	font-size: 1.1rem;
+	margin-bottom: 20px;
+}
+
+/* ---- Sizes Form ---- */
+.select-size {
+	display: flex;
+	align-items: center;
+}
+.select-size > label input {
+	display: none;
+}
+.select-size > label span {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 25px;
+	display: inline-block;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.select-size label input:checked + span {
+	font-weight: 700;
+	color: var(--alert);
+}
+
+/* ---- Quantity Selector ---- */
+.quantity .select-quantity {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 5px;
+}
+.quantity .select-quantity input {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 25px;
+	/* background: var(--primary); */
+	/* border: 0; */
+	/* outline: 0; */
+	padding: 2px 2px 2px 15px;
+	border-radius: 0;
+	width: 60px;
+}
+
+/* ---- Submit button ---- */
+.submit {
+	width: 12rem;
+	height: 4rem;
+	background-color: var(--primary);
+}
+.submit:hover {
+	color: var(--primary);
+	background-color: var(--alert);
+	border-color: var(--accent);
+}
+
+/* -------------- MOBILE LANDSCAPE AND TABLET DEVICES -------------- */
+@media screen and (max-width: 1100px) {
+	.title {
+		margin-top: 0;
+		/* text-align: center; */
+		font-size: 3rem;
+	}
+	.nav-links {
+		display: none;
+	}
+	.menu-btn {
+		display: block;
+	}
+	.nav-mobile:hover {
+		color: #ff0808;
+	}
+
+	/* -------------- PRODUCT LIST PAGE -------------- */
+	section {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+		gap: 2rem;
+	}
+}
