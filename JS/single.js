@@ -1,26 +1,7 @@
-// //  -------- MOBILE BURGER MENU ------------
-// const menuBtn = document.getElementById("menu-btn");
-// const navMobile = document.getElementById("nav-mobile");
-
-// // Toggle mobile menu on hamburger click
-// menuBtn.addEventListener("click", () => {
-// 	menuBtn.classList.toggle("open");
-// 	navMobile.classList.toggle("open");
-// });
-
-// // Close the mobile menu when the screen gets larger than 768px
-// window.addEventListener("resize", () => {
-// 	if (window.innerWidth > 768) {
-// 		// Remove open classes when resizing to a larger screen
-// 		menuBtn.classList.remove("open");
-// 		navMobile.classList.remove("open");
-// 	}
-// });
-
 // --- Link til produktet (En HURTIGERE måde at FETCH på)
 
-const productContainer = document.querySelector(".single-product-container");
 const productId = 1163;
+const productContainer = document.querySelector(".single-product-container");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 	.then((response) => response.json())
@@ -28,30 +9,33 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 		productContainer.innerHTML = `
                <section class="single-product-container">
 				<article class="product-img">
-					<img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
 				</article>
 				<article class="product-info">
 					<h3 class="pi title">PRODUCT INFO</h3>
 					<dl class="info-list">
 						<dt>Product name:</dt>
-						<dd class="name">Sahara Team India Fanwear Round Neck Jersey</dd>
+						<dd class="name">${data.productdisplayname}</dd>
 						<dt>Color:</dt>
-						<dd class="color">Blue</dd>
+						<dd class="color">${data.basecolour}</dd>
 						<dt>Inventory number:</dt>
-						<dd class="name">1163</dd>
+						<dd class="id-number">${data.id}</dd>
 					</dl>
 					<article class="product-slogan">
-						<h5></h5>
-						<p></p>
+						<h5>${data.brandname}</h5>
+						<p>${data.brandbio}</p>
 					</article>
 				</article>
 				<article class="purchase-box">
-					<h5 class="model-name">Sahara Team India Fanwear Round Neck Jersey</h5>
+					<h5 class="model-name">${data.productdisplayname}</h5>
 					<div class="prod-categories">
-						<p class="type">T-shirts</p>
+						<p class="type">${data.articletype}</p>
 						<span class="separator">|</span>
-						<!-- <p class="separator">|</p> -->
-						<p class="brand">Nike</p>
+						<p class="brand">${data.brandname}</p>
+					</div>
+					<div class="price">
+						${data.price}
+						<span> DKK</span>
 					</div>
 					<div class="sizes">
 						<form class="sizes-form">
