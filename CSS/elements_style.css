@@ -37,7 +37,7 @@ button:hover {
 /* -------------- PRODUCT LIST PAGE -------------- */
 section {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2rem;
 }
 .product,
@@ -50,7 +50,7 @@ section {
 	grid-template-rows: subgrid;
 	grid-row: span 5;
 	gap: 1rem;
-	margin: 0 0 5px 0;
+	margin: 0 0 20px 0;
 	text-align: left;
 }
 article > img {

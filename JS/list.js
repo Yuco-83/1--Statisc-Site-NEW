@@ -15,7 +15,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
                     <div class="sold-out">${product.soldout}</div>
 				<img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" />
 				<h6 class="product_name">${product.productdisplayname}</h6>
-				<div class="p-categories">
+				<div class="prod-categories">
 					<p class="type">${product.articletype}</p>
 					<p class="separator">|</p>
 					<p class="brand">${product.brandname}</p>
@@ -27,13 +27,15 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
 						<p class="discount-percent">34%</p>
 					</div>
 				</div>
-				<a class="product" href="./product.html">
-					Read More
+				<a class="product" href="./single_product.html">
+				Read More
 				</a>
-			</article>;`;
+				</article>`;
 			})
 			.join("");
 		console.log(markup);
 		productListContainer.innerHTML = markup;
 	}
 }
+
+// <a class="product" href="./product${product.id}.html">
