@@ -37,7 +37,7 @@ button:hover {
 /* -------------- PRODUCT LIST PAGE -------------- */
 section {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2rem;
 }
 .product,
@@ -50,7 +50,7 @@ section {
 	grid-template-rows: subgrid;
 	grid-row: span 5;
 	gap: 1rem;
-	margin: 0 0 5px 0;
+	margin: 0 0 20px 0;
 	text-align: left;
 }
 article > img {
@@ -87,7 +87,7 @@ article > img {
 
 /* Skal finde en måde at giv den samme størrelse til "Price" font. */
 .discount {
-	font-size: 40px;
+	/* font-size: 40px; */
 
 	color: var(--alert);
 	font-weight: 700;
@@ -96,12 +96,12 @@ article > img {
 	justify-content: space-between;
 }
 .discount_price {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 800;
 	color: var(--alert);
 }
 .discount-percent {
-	font-size: 18px;
+	font-size: 14px;
 	background-color: var(--alert);
 	color: var(--primary);
 	text-shadow: var(--accent);
@@ -168,14 +168,14 @@ a.product:hover {
 }
 dt {
 	font-family: var(--oswald);
-	font-size: 16px;
+	font-size: 1.2rem;
 	font-weight: 600;
 }
 dd {
 	font-family: var(--open);
 	font-weight: 400;
-	font-size: 1.1rem;
-	margin-bottom: 20px;
+	font-size: 1rem;
+	margin-bottom: 10px;
 }
 
 /* ---- Sizes Form ---- */
@@ -187,7 +187,7 @@ dd {
 	display: none;
 }
 .select-size > label span {
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 400;
 	line-height: 25px;
 	display: inline-block;
@@ -198,7 +198,10 @@ dd {
 	font-weight: 700;
 	color: var(--alert);
 }
-
+.sizes-form h6,
+.select-quantity h6 {
+	font-size: 1.2rem;
+}
 /* ---- Quantity Selector ---- */
 .quantity .select-quantity {
 	display: flex;
@@ -207,7 +210,7 @@ dd {
 	gap: 5px;
 }
 .quantity .select-quantity input {
-	font-size: 14px;
+	font-size: 1rem;
 	font-weight: 400;
 	line-height: 25px;
 	/* background: var(--primary); */
@@ -252,5 +255,12 @@ dd {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
 		gap: 2rem;
+	}
+
+	/* -------------- SINGLE PRODUCT PAGE -------------- */
+	.product-info,
+	.purchase-box {
+		padding: 80px 30px;
+		outline: 1px solid var(--secondary);
 	}
 }

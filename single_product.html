@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0" />
-		<title>Static - SINGLE PRODUCT</title>
+
 		<link rel="stylesheet" href="./CSS/general.css" />
 		<link rel="stylesheet" href="./CSS/elements_style.css" />
+
+		<title>Static - SINGLE PRODUCT</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@100..900&family=Open+Sans:wght@100..900&display=swap"
 			rel="stylesheet" />
@@ -23,7 +25,7 @@
 				<a href="index_categ.html">FashionRUs</a>
 			</h5>
 			<nav class="nav">
-				<div class="menu-btn" name="menu-btn">
+				<div class="menu-btn" id="menu-btn">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -34,7 +36,7 @@
 					<li><a href="index_categories.html">Seasons</a></li>
 				</ul>
 
-				<div class="nav-mobile" name="nav-mobile">
+				<div class="nav-mobile" id="nav-mobile">
 					<a href="index_categ.html">Categories</a>
 					<a href="index_categories.html">Brands</a>
 					<a href="index_categories.html">Seasons</a>
@@ -46,7 +48,7 @@
 			<!-- <h3 class="title">PRODUCT INFO</h3> -->
 			<section class="single-product-container">
 				<article class="product-img">
-					<img src="./Assets/1163.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<img src="" alt="Sahara Team India Fanwear Round Neck Jersey" />
 				</article>
 				<article class="product-info">
 					<h3 class="pi title">PRODUCT INFO</h3>
@@ -56,11 +58,11 @@
 						<dt>Color:</dt>
 						<dd class="color">Blue</dd>
 						<dt>Inventory number:</dt>
-						<dd class="name">1163</dd>
+						<dd class="id-number">1163</dd>
 					</dl>
 					<article class="product-slogan">
-						<h5></h5>
-						<p></p>
+						<h5 class="brand">NIKE</h5>
+						<p class="slogan">Nike, creating experiences for today’s athlete</p>
 					</article>
 				</article>
 				<article class="purchase-box">
@@ -70,6 +72,10 @@
 						<span class="separator">|</span>
 						<!-- <p class="separator">|</p> -->
 						<p class="brand">Nike</p>
+					</div>
+					<div class="price">
+						895
+						<span> DKK</span>
 					</div>
 					<div class="sizes">
 						<form class="sizes-form">
@@ -119,8 +125,8 @@
 
 	<script>
 		//  -------- MOBILE BURGER MENU ------------
-		const menuBtn = document.getElementByname("menu-btn");
-		const navMobile = document.getElementByname("nav-mobile");
+		const menuBtn = document.getElementById("menu-btn");
+		const navMobile = document.getElementById("nav-mobile");
 
 		// Toggle mobile menu on hamburger click
 		menuBtn.addEventListener("click", () => {
@@ -130,11 +136,12 @@
 
 		// Close the mobile menu when the screen gets larger than 768px
 		window.addEventListener("resize", () => {
-			if (window.innerWnameth > 768) {
+			if (window.innerWidth > 768) {
 				// Remove open classes when resizing to a larger screen
 				menuBtn.classList.remove("open");
 				navMobile.classList.remove("open");
 			}
 		});
 	</script>
+	<script src="./JS/single.js" defer></script>
 </html>
