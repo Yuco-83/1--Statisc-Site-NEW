@@ -1,4 +1,4 @@
-console.log("index script loaded");
+// console.log("index script loaded");
 
 fetch(`https://kea-alt-del.dk/t7/api/categories`)
 	.then((response) => response.json())
