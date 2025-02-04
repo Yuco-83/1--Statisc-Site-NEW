@@ -34,6 +34,18 @@ button:hover {
 	outline: 0;
 }
 
+/* -------------- BRANDS PAGE -------------- */
+.brands-container {
+	display: grid;
+	margin: 0 auto;
+	grid-template-rows: 6rem;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-row: auto;
+	gap: 2rem;
+	justify-self: center;
+	grid-auto-rows: 6rem;
+}
+
 /* -------------- PRODUCT LIST PAGE -------------- */
 section {
 	display: grid;
