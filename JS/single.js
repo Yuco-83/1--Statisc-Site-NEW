@@ -35,11 +35,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 					</div>
 					<div class="price">
 						${data.price}
-<<<<<<< HEAD
-						<span>  DKK</span>
-=======
 						<span> DKK</span>
->>>>>>> 6ccab557f64a733e28b53ab16c5d7ffa7f2ae4fa
 					</div>
 					<div class="sizes">
 						<form class="sizes-form">
