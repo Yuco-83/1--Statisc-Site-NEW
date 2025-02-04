@@ -5,7 +5,7 @@
 }
 .categories-container {
 	display: grid;
-	margin: 0 auto;
+	margin: 30px auto;
 	grid-template-rows: 6rem;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-row: auto;
