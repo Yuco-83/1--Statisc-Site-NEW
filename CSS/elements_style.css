@@ -161,6 +161,7 @@ a.product:hover {
 .model-name {
 	margin: 0;
 	padding: 0;
+	color: var(--accent-light-shade);
 }
 
 .pi {
@@ -176,6 +177,9 @@ dd {
 	font-weight: 400;
 	font-size: 1rem;
 	margin-bottom: 10px;
+}
+.price {
+	font-size: 2rem;
 }
 
 /* ---- Sizes Form ---- */
