@@ -40,7 +40,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
 
 // <a class="product" href="./product${product.id}.html">
 
-//  ------------------------ UNA PRUEVA -------------------------------
+//  --------------------------- UNA PRUEVA -------------------------------
 // const productId = 1163;
 // const productListContainer = document.querySelector(".product-list-container");
 
