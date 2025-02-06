@@ -1,7 +1,8 @@
 // --- Link til produktet (En HURTIGERE måde at FETCH på)
 
-const productId = 1163;
 const productContainer = document.querySelector(".single-product-container");
+
+const productId = new URLSearchParams(window.location.search).get("productid");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 	.then((response) => response.json())
@@ -9,7 +10,8 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 		productContainer.innerHTML = `
                <section class="single-product-container">
 				<article class="product-img">
-					<img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<span class="sales-label ${data.discount && "onSale"}">-${data.discount}%</span>
 				</article>
 				<article class="product-info">
 					<h3 class="pi title">PRODUCT INFO</h3>
@@ -34,8 +36,12 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 						<p class="brand">${data.brandname}</p>
 					</div>
 					<div class="price">
+						<span>DKK  </span>
 						${data.price}
-						<span> DKK</span>
+						<div class="discount">
+							<p class="discount-price">DKK <span>${Math.floor((data.price * data.discount) / 100)}</span></p>
+							<p class="discount-percent">-${data.discount}%</p>
+						</div>
 					</div>
 					<div class="sizes">
 						<form class="sizes-form">
@@ -72,7 +78,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 					</div>
 					<div>
 						<div class="sub-btn">
-							<button type="submit" class="submit">Add to cart</button>
+							<button type="submit" class="submit"><a href="single_product.html?productid=${data.id}">Add to cart</a></button>
 						</div>
 					</div>
 				</article>

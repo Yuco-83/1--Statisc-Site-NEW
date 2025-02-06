@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0" />
-
+		<title>Static - SINGLE PRODUCT</title>
 		<link rel="stylesheet" href="./CSS/general.css" />
 		<link rel="stylesheet" href="./CSS/elements_style.css" />
-
-		<title>Static - SINGLE PRODUCT</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@100..900&family=Open+Sans:wght@100..900&display=swap"
 			rel="stylesheet" />
+
+		<script src="./JS/single.js" defer></script>
 	</head>
 
 	<body>
@@ -49,6 +49,7 @@
 			<section class="single-product-container">
 				<article class="product-img">
 					<img src="" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<span class="sales-label">-%</span>
 				</article>
 				<article class="product-info">
 					<h3 class="pi title">PRODUCT INFO</h3>
@@ -70,12 +71,15 @@
 					<div class="prod-categories">
 						<p class="type">T-shirts</p>
 						<span class="separator">|</span>
-						<!-- <p class="separator">|</p> -->
 						<p class="brand">Nike</p>
 					</div>
 					<div class="price">
 						895
 						<span> DKK</span>
+						<div class="discount">
+							<p class="discount_price">1560,-</p>
+							<p class="discount-percent">-34%</p>
+						</div>
 					</div>
 					<div class="sizes">
 						<form class="sizes-form">
@@ -112,6 +116,7 @@
 					</div>
 					<div>
 						<div class="sub-btn">
+							<!-- <button type="submit" class="submit"><a href="single_product.html?productid=${data.id}">Add to cart</a></button> -->
 							<button type="submit" class="submit">Add to cart</button>
 						</div>
 					</div>
@@ -143,5 +148,4 @@
 			}
 		});
 	</script>
-	<script src="./JS/single.js" defer></script>
 </html>
