@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0" />
-
+		<title>Static - SINGLE PRODUCT</title>
 		<link rel="stylesheet" href="./CSS/general.css" />
 		<link rel="stylesheet" href="./CSS/elements_style.css" />
-
-		<title>Static - SINGLE PRODUCT</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:wght@100..900&family=Open+Sans:wght@100..900&display=swap"
 			rel="stylesheet" />
+
+		<script src="./JS/single.js" defer></script>
 	</head>
 
 	<body>
@@ -32,14 +32,14 @@
 				</div>
 				<ul class="nav-links">
 					<li><a href="index_categ.html">Categories</a></li>
-					<li><a href="index_categories.html">Brands</a></li>
-					<li><a href="index_categories.html">Seasons</a></li>
+					<li><a href="brands.html">Brands</a></li>
+					<li><a href="seasons.html">Seasons</a></li>
 				</ul>
 
 				<div class="nav-mobile" id="nav-mobile">
 					<a href="index_categ.html">Categories</a>
-					<a href="index_categories.html">Brands</a>
-					<a href="index_categories.html">Seasons</a>
+					<a href="brands.html">Brands</a>
+					<a href="seasons.html">Seasons</a>
 				</div>
 			</nav>
 		</header>
@@ -47,8 +47,9 @@
 		<main class="main">
 			<!-- <h3 class="title">PRODUCT INFO</h3> -->
 			<section class="single-product-container">
-				<article class="product-img">
+				<article class="product-img onSale soldOut">
 					<img src="" alt="Sahara Team India Fanwear Round Neck Jersey" />
+					<!-- <span class="sales-label">-%</span> -->
 				</article>
 				<article class="product-info">
 					<h3 class="pi title">PRODUCT INFO</h3>
@@ -67,15 +68,11 @@
 				</article>
 				<article class="purchase-box">
 					<h5 class="model-name">Sahara Team India Fanwear Round Neck Jersey</h5>
-					<div class="prod-categories">
-						<p class="type">T-shirts</p>
-						<span class="separator">|</span>
-						<!-- <p class="separator">|</p> -->
-						<p class="brand">Nike</p>
-					</div>
-					<div class="price">
-						895
-						<span> DKK</span>
+					<p class="subtle">Tshirts | Nike</p>
+					<p class="price">DKK 1595</p>
+					<div class="discount">
+						<p class="discount_price">DKK <span>1560</span></p>
+						<p class="discount_percent">-<span>34</span>%</p>
 					</div>
 					<div class="sizes">
 						<form class="sizes-form">
@@ -112,6 +109,7 @@
 					</div>
 					<div>
 						<div class="sub-btn">
+							<!-- <button type="submit" class="submit"><a href="single_product.html?productid=${data.id}">Add to cart</a></button> -->
 							<button type="submit" class="submit">Add to cart</button>
 						</div>
 					</div>
@@ -143,5 +141,4 @@
 			}
 		});
 	</script>
-	<script src="./JS/single.js" defer></script>
 </html>
